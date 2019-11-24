@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       <div class="col-md-6">
                         <div class="form-group"><div class="form-line">
                           <label for="username">Username</label>
-                          <input class="form-control" type="text" name="username" value="<?php echo set_value('username'); ?>">
+                          <input required class="form-control" type="text" name="username" value="<?php echo set_value('username'); ?>">
                         </div></div>
                         <div class="form-group"><div class="form-line">
                           <label for="namalengkap">Nama</label>

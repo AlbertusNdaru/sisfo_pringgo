@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <!-- <meta http-equiv="refresh" content="10;URL='<?= base_url("Dashboard")?>'" /> -->
     <link rel="stylesheet" href="<?php echo base_url('bootadmin/css/bootstrap.min.css') ?>">
     <link rel="stylesheet" href="<?php echo base_url('bootadmin/css/datatables.min.css') ?>">
     <link rel="stylesheet" href="<?php echo base_url('bootadmin/css/fullcalendar.min.css') ?>">

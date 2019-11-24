@@ -23,6 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <tr>
                             <th>Nama Kepala Keluarga Lingkungan</th>
                             <th>No Keluarga</th>
+                            <th>Action</th>
                             <!-- <th class="actions">Actions</th> -->
                         </tr>
                     </thead>

@@ -225,7 +225,7 @@ class Models_Umat extends CI_Model
 		$order = $order + 1;
 		// echo $order;
 		$this->db->order_by($order, $dir);
-		$this->db->select("kepalakeluarga as '0', np as '1'");
+		$this->db->select("kepalakeluarga, np");
 		$this->db->from("data_keluarga");
 		$this->db->limit($size, $page);
 		// return null;

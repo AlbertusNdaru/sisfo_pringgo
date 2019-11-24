@@ -29,7 +29,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <?php } ?>
                                 </tbody>
                             </table>
-                            
                             <?php $this->load->view('admin/hapus-admin'); ?>
                             <?php $this->load->view('admin/perbarui-admin'); ?>
                         </div>

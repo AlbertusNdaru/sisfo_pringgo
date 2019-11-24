@@ -14,7 +14,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <script>
     $(document).ready(function() {
         $('#datatableskepalakeluarga').DataTable({
-            'length': 5,
+            'length': 10,
             'serverSide': true,
             "processing": true,
             'ajax': {
@@ -23,7 +23,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             }
         });
         $('#test').DataTable({
-            'length': 5,
+            'length': 10,
             'serverSide': true,
             "processing": true,
             'ajax': {

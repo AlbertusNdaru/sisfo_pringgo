@@ -5,9 +5,6 @@ class Umat extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
-		if($this->session->userdata('status') != 'login'){
-			redirect(base_url());
-		}
 		$this->load->helper('tgl_indo');
 		$this->load->model('Models_Meta');
 		$this->load->model('Models_Umat');
@@ -58,7 +55,17 @@ class Umat extends CI_Controller {
 		$search      = isset($_GET['search']['value'])? $_GET['search']['value']: null ;
 		$order       = $_GET['order'][0]['column'];
 		$dir         = $_GET['order'][0]['dir'];
-		$ret['data'] = $this->Models_Umat->daftarKepalaKeluarga($page, $size, $search, $order, $dir);
+		$datakepala  = $this->Models_Umat->daftarKepalaKeluarga($page, $size, $search, $order, $dir);
+		$datakep = array();
+		foreach($datakepala as $dk)
+		{
+			$data =  array(	"0" => $dk->kepalakeluarga,
+							"1" => $dk->np,
+							"2" => "<a href=".base_url('umat/'.$dk->np)." class='btn btn-sm btn-icon btn-pill btn-primary' data-toggle='tooltip' title='Detail'><i class='fa fa-fw fa-eye'></i></a>");
+			
+			array_push($datakep, $data);
+		}
+		$ret['data'] =  $datakep;
 		if ($search ==  null ) { $filtered = count($this->Models_Umat->daftarkeluarga()); } else { $filtered= count($ret['data']);};
 		$ret['draw'] = $_GET['draw'];
 		$ret['recordsTotal'] = count($this->Models_Umat->daftarkeluarga());
@@ -93,7 +100,7 @@ class Umat extends CI_Controller {
 			$this->session->set_flashdata('message', '<script>$(document).ready(function () {swal(\'Berhasil!\', \'Sukses menghapus data keluarga.\', \'success\');});</script>');
 			redirect(base_url('umat'));
 		}
-		$this->load->view('umat/index', $data);
+		$this->load->view('umat/dataumat', $data);
 		$this->load->view('footer');
 	}
 
